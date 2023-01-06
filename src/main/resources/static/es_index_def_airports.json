@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "dynamic": false,
+    "properties": {
+      "ourAirportsId": {"type": "integer"},
+      "airportCode": {"type": "keyword"},
+      "airportType": {"type": "keyword"},
+      "name": {"type": "text"},
+      "latitudeDeg": {"type": "double"},
+      "longitudeDeg": {"type": "double"},
+      "elevationFt": {"type": "integer"},
+      "continent": {"type": "keyword"},
+      "countryIso": {"type": "keyword"},
+      "regionIso": {"type": "keyword"},
+      "municipality": {"type": "keyword"},
+      "scheduledService": {"type": "boolean"},
+      "gpsCode": {"type": "keyword"},
+      "iataCode": {"type": "keyword"},
+      "localCode": {"type": "keyword"},
+      "homeUrl": {"type": "keyword"},
+      "wikipediaUrl": {"type": "keyword"},
+      "keywords": {"type": "text"}
+    }
+  }
+}

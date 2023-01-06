@@ -1,0 +1,81 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "dynamic": false,
+    "properties": {
+      "entryDate": {"type": "date"},
+      "aircraftID": {"type": "keyword"},
+      "origin": {"type": "keyword"},
+      "destination": {"type": "keyword"},
+      "route": {"type": "text"},
+      "timeIn": {"type": "text", "index": false},
+      "timeOff": {"type": "text", "index": false},
+      "timeOn": {"type": "text", "index": false},
+      "timeOut": {"type": "text", "index": false},
+      "onDuty": {"type": "text", "index": false},
+      "offDuty": {"type": "text", "index": false},
+      "totalTimeHours": {"type": "float"},
+      "picHours": {"type": "float"},
+      "sicHours": {"type": "float"},
+      "nightHours": {"type": "float"},
+      "soloHours": {"type": "float"},
+      "crossCountryHours": {"type": "float"},
+      "nightVisionGoggleHours": {"type": "float"},
+      "numNightVisionGoggleOps": {"type": "long"},
+      "distanceNm": {"type": "float"},
+      "numDayTakeoffs": {"type": "long"},
+      "numDayLandingsFullStop": {"type": "long"},
+      "numNightTakeoffs": {"type": "long"},
+      "numNightLandingsFullStop": {"type": "long"},
+      "totalAllLandings": {"type": "long"},
+      "actualInstrumentHours": {"type": "float"},
+      "simulatedInstrumentHours": {"type": "float"},
+      "hobbsEnd": {"type": "float"},
+      "hobbsStart": {"type": "float"},
+      "tachEnd": {"type": "float"},
+      "tachStart": {"type": "float"},
+      "numHolds": {"type": "long"},
+      "approaches" : {
+        "properties" : {
+          "title" : {"type" : "text"},
+          "airport" : {"type": "keyword"},
+          "approachType" : {"type": "keyword" },
+          "runway" : {"type": "keyword" },
+          "circleToLand" : {"type" : "boolean" },
+          "comments" : {"type" : "text" }
+        }
+      },
+      "dualGivenHours": {"type": "float"},
+      "dualReceivedHours": {"type": "float"},
+      "simulatedFlightHours": {"type": "float"},
+      "groundTrainingHours": {"type": "float"},
+      "instructorName": {
+        "properties": {
+          "referenceName": {"type": "text"},
+          "surname": {"type": "text"}
+        }
+      },
+      "instructorComments": {"type": "text"},
+      "persons": {
+        "properties": {
+          "name": {
+            "properties": {
+              "referenceName": {"type": "text"},
+              "surname": {"type": "text"}
+            }
+          },
+          "role": {"type": "keyword"}
+        }
+      },
+      "flightReview": {"type": "boolean"},
+      "instrumentProficiencyCheck": {"type": "boolean"},
+      "checkride": {"type": "boolean"},
+      "faa6158ProficiencyCheck": {"type": "boolean"},
+      "nvgProficiency": {"type": "boolean"},
+      "pilotComments": {"type": "text"}
+    }
+  }
+}}

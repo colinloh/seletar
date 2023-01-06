@@ -1,0 +1,20 @@
+type Query {
+    wordle(hints: [WordleHint!]!) : [Possibility]!
+}
+
+type Possibility {
+    word: String!
+    divisiveFactor: Float!
+}
+
+"What we know about a letter based on wordle input results"
+input WordleHint {
+    "Which letter this hint pertains to"
+    letter: String
+    "Which positions have this precise letter"
+    atPositions: [Int!]
+    "This letter isn't at this position, but is in a another unaccounted for position"
+    somewhereOtherThan: [Int!]
+    "This letter does not show up any place other than at positions already precisely identified"
+    isNoMore: Boolean
+}
